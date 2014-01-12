@@ -33,7 +33,7 @@
   (let [rows (get (get @grid layout) column)]
     (keys (select-keys rows (for [[k v] rows :when (= v 1.0)] k)))))
 
-(defn multitoggle-handler [server layout widget rows columns]
+(defn add-multitoggle-handler [server layout widget rows columns]
   (doseq [column (range 1 (+ columns 1))]
     (doseq [row (range 1 (+ rows 1))]
       (osc-handle server (path-from-params layout widget row column) update-grid))))
