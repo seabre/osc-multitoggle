@@ -29,6 +29,10 @@
         value (first (:args msg))]
     (swap! beat assoc layout (change-column-map @beat layout row column value))))
 
+(defn get-active-in-row [layout column]
+  (let [rows (get (get @beat layout) column)]
+    (keys (select-keys rows (for [[k v] rows :when (= v 1.0)] k)))))
+
 (defn multitoggle-handler [server layout widget rows columns]
   (doseq [column (range 1 (+ columns 1))]
     (doseq [row (range 1 (+ rows 1))]
