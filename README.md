@@ -6,6 +6,13 @@ Easily keep track of TouchOSC multitoggle state, meant for use in Overtone.
 
 Working with TouchOSC widgets is fairly straightforward. However "doing stuff" with multitoggle is not, since the client is only sending you information about the updated grid element, not the entire grid. osc-multitoggle manages state and creates the handlers for you.
 
+# Installation
+
+The project is on [clojars](https://clojars.org/osc-multitoggle), so just add it as a dependency in your project:
+```clojure
+[osc-multitoggle "0.1.0"]
+```
+
 # Usage
 
 osc-multitoggle *only* manages state and handlers. It does not create a drum machine for you out of the box, but see an example below to accomplish that.
