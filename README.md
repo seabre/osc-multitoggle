@@ -34,6 +34,10 @@ The structure was designed so that you could keep track of multitoggle state acr
 (def rows 6)
 (def columns 16)
 
+; Note: I'm using the Beatmachine layout in TouchOSC.
+;       If you're using a different layout, change the layout and widget arguments to the appropriate name.
+;       If the client is sending a path of: "/1/someothermultitoggle/1/1", you could change it to:
+;       (add-multitoggle-handler server 1 "someothermultitoggle" rows columns)
 (add-multitoggle-handler server 2 "multitoggle" rows columns)
 
 ; Our grid has 16 columns. Subdivide the beat and treat each column as an eighth note.
